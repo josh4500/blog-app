@@ -1,3 +1,4 @@
+import 'package:blog_app/ui/screens/authentication/authentication.dart';
 import 'package:flutter/material.dart';
 
 void main() {
