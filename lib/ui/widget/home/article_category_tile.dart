@@ -10,7 +10,7 @@ class ArticleCategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
+      height: 200,
       width: 170,
       margin: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
@@ -20,7 +20,7 @@ class ArticleCategoryTile extends StatelessWidget {
           BoxShadow(
             color: Colors.black54,
             blurRadius: 15.0,
-            spreadRadius: -10,
+            spreadRadius: -15,
             offset: Offset(0.0, 9.0),
           )
         ],

@@ -91,6 +91,34 @@ class Article {
     };
   }
 
+  factory Article.test() {
+    Publisher publisher = Publisher(
+      uid: '',
+      name: '',
+      address: '',
+      phone: '',
+      email: '',
+      website: '',
+      logo: '',
+      description: '',
+      facebook: '',
+      twitter: '',
+      instagram: '',
+      youtube: '',
+      articles: [],
+    );
+    return Article(
+      titleId: '',
+      title: '',
+      author: publisher,
+      description: '',
+      url: '',
+      urlToImage: '',
+      publishedAt: '',
+      content: '',
+    );
+  }
+
   factory Article.fromMap(Map<String, dynamic> map) {
     return Article(
         titleId: map['titleId'] ?? '',

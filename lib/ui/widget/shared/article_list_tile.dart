@@ -16,6 +16,7 @@ class _ArticleListTileState extends State<ArticleListTile> {
       height: 120,
       width: double.infinity,
       padding: const EdgeInsets.only(right: 10.0),
+      margin: const EdgeInsets.only(bottom: 20.0),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(12.0)),
