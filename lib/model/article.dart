@@ -14,7 +14,7 @@ class Article {
   final String urlToImage;
   final String publishedAt;
   final String content;
-  final List<AriticleCategory>? tags;
+  final List<AriticleCategoryEnum>? tags;
   final List<Map<int, String>>? media;
   final List<String>? links;
   final int likes;
@@ -45,7 +45,7 @@ class Article {
     String? urlToImage,
     String? publishedAt,
     String? content,
-    List<AriticleCategory>? tags,
+    List<AriticleCategoryEnum>? tags,
     List<Map<int, String>>? media,
     List<String>? links,
     int? likes,
@@ -96,8 +96,9 @@ class Article {
       urlToImage: map['urlToImage'] ?? '',
       publishedAt: map['publishedAt'] ?? '',
       content: map['content'] ?? '',
-      tags:
-          map['tags'] != null ? List<AriticleCategory>.from(map['tags']) : null,
+      tags: map['tags'] != null
+          ? List<AriticleCategoryEnum>.from(map['tags'])
+          : null,
       media: map['media'] != null
           ? List<Map<int, String>>.from(map['media'])
           : null,
