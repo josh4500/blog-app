@@ -95,6 +95,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     height: 120,
                     width: double.infinity,
+                    padding: const EdgeInsets.only(right: 10.0),
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(12.0)),
@@ -111,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         SizedBox(
                           height: 120,
-                          width: 100,
+                          width: 90,
                           child: ClipRRect(
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(12.0)),
@@ -122,49 +123,64 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 10.0),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 10.0),
-                            const Text(
-                              'BIG DATA',
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Expanded(
-                              child: Text(
-                                'Why are the Uchihas this cool?',
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 10.0),
+                              const Text(
+                                'BIG DATA',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
-                                Icon(
-                                  Icons.favorite_border_outlined,
-                                  size: 16.0,
+                              Expanded(
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  child: const Text(
+                                    'Why are the Uchihas this cool?',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                                Text('1.2k'),
-                                Icon(
-                                  Icons.timer,
-                                  size: 16.0,
-                                ),
-                                Text('1hr ago'),
-                                Icon(
-                                  Icons.bookmark,
-                                  size: 16.0,
-                                  color: Colors.blue,
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            )
-                          ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: const [
+                                      Icon(
+                                        Icons.favorite_border_outlined,
+                                        size: 16.0,
+                                      ),
+                                      Text('1.2k'),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: const [
+                                      Icon(
+                                        Icons.timer,
+                                        size: 16.0,
+                                      ),
+                                      Text('1hr ago'),
+                                    ],
+                                  ),
+                                  const Icon(
+                                    Icons.bookmark,
+                                    size: 16.0,
+                                    color: Colors.blue,
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10.0,
+                              )
+                            ],
+                          ),
                         )
                       ],
                     ),
