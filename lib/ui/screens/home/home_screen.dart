@@ -83,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Center(
               child: PageView.builder(
                 itemCount: articleCategoryList.length,
+                padEnds: false,
                 controller: _pageController,
                 itemBuilder: (context, index) {
                   return Transform(
