@@ -12,7 +12,7 @@ class ArticleCategoryTile extends StatelessWidget {
     return Container(
       height: 200,
       width: 170,
-      margin: const EdgeInsets.all(12.0),
+      margin: const EdgeInsets.only(right: 15.0),
       decoration: BoxDecoration(
         image: DecorationImage(fit: BoxFit.cover, image: AssetImage(imagePath)),
         borderRadius: const BorderRadius.all(Radius.circular(24.0)),

@@ -16,7 +16,7 @@ class _ArticleListTileState extends State<ArticleListTile> {
       height: 120,
       width: double.infinity,
       padding: const EdgeInsets.only(right: 10.0),
-      margin: const EdgeInsets.only(bottom: 20.0),
+      margin: const EdgeInsets.only(bottom: 20.0, right: 24.0),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(12.0)),
@@ -60,6 +60,8 @@ class _ArticleListTileState extends State<ArticleListTile> {
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
                       widget.article.description,
+                      maxLines: 2,
+                      overflow: TextOverflow.fade,
                       style: const TextStyle(
                         color: Colors.black,
                       ),
