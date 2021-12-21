@@ -22,11 +22,15 @@ class _ArticleListTileState extends State<ArticleListTile> {
         borderRadius: BorderRadius.all(Radius.circular(12.0)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
-            offset: Offset(6.0, 6.0),
-            blurRadius: 15.0,
-            spreadRadius: -13,
-          )
+            color: Color(0xFFe8e8e8),
+            offset: Offset(5.0, 5.0),
+            blurRadius: 5.0,
+          ),
+          BoxShadow(
+            color: Colors.white,
+            offset: Offset(0.0, -10),
+            blurRadius: 5.0,
+          ),
         ],
       ),
       child: Row(
