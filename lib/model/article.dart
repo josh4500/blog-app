@@ -14,11 +14,12 @@ class Article {
   final String urlToImage;
   final String publishedAt;
   final String content;
-  final List<AriticleCategory>? tags;
+  final List<AriticleCategoryEnum>? tags;
   final List<Map<int, String>>? media;
   final List<String>? links;
   final int likes;
   final int shares;
+  bool bookmarked;
 
   Article({
     required this.titleId,
@@ -34,6 +35,7 @@ class Article {
     this.links,
     this.likes = 0,
     this.shares = 0,
+    this.bookmarked = false,
   });
 
   Article copyWith({
@@ -45,11 +47,12 @@ class Article {
     String? urlToImage,
     String? publishedAt,
     String? content,
-    List<AriticleCategory>? tags,
+    List<AriticleCategoryEnum>? tags,
     List<Map<int, String>>? media,
     List<String>? links,
     int? likes,
     int? shares,
+    bool? bookmarked,
   }) {
     return Article(
       titleId: titleId ?? this.titleId,
@@ -65,6 +68,7 @@ class Article {
       links: links ?? this.links,
       likes: likes ?? this.likes,
       shares: shares ?? this.shares,
+      bookmarked: bookmarked ?? this.bookmarked,
     );
   }
 
@@ -83,28 +87,58 @@ class Article {
       'links': links,
       'likes': likes,
       'shares': shares,
+      'bookmarked': bookmarked,
     };
+  }
+
+  factory Article.test() {
+    Publisher publisher = Publisher(
+      uid: '',
+      name: '',
+      address: '',
+      phone: '',
+      email: '',
+      website: '',
+      logo: '',
+      description: '',
+      facebook: '',
+      twitter: '',
+      instagram: '',
+      youtube: '',
+      articles: [],
+    );
+    return Article(
+      titleId: '',
+      title: '',
+      author: publisher,
+      description: '',
+      url: '',
+      urlToImage: '',
+      publishedAt: '',
+      content: '',
+    );
   }
 
   factory Article.fromMap(Map<String, dynamic> map) {
     return Article(
-      titleId: map['titleId'] ?? '',
-      title: map['title'] ?? '',
-      author: Publisher.fromMap(map['author']),
-      description: map['description'] ?? '',
-      url: map['url'] ?? '',
-      urlToImage: map['urlToImage'] ?? '',
-      publishedAt: map['publishedAt'] ?? '',
-      content: map['content'] ?? '',
-      tags:
-          map['tags'] != null ? List<AriticleCategory>.from(map['tags']) : null,
-      media: map['media'] != null
-          ? List<Map<int, String>>.from(map['media'])
-          : null,
-      links: List<String>.from(map['links']),
-      likes: map['likes']?.toInt() ?? 0,
-      shares: map['shares']?.toInt() ?? 0,
-    );
+        titleId: map['titleId'] ?? '',
+        title: map['title'] ?? '',
+        author: Publisher.fromMap(map['author']),
+        description: map['description'] ?? '',
+        url: map['url'] ?? '',
+        urlToImage: map['urlToImage'] ?? '',
+        publishedAt: map['publishedAt'] ?? '',
+        content: map['content'] ?? '',
+        tags: map['tags'] != null
+            ? List<AriticleCategoryEnum>.from(map['tags'])
+            : null,
+        media: map['media'] != null
+            ? List<Map<int, String>>.from(map['media'])
+            : null,
+        links: List<String>.from(map['links']),
+        likes: map['likes']?.toInt() ?? 0,
+        shares: map['shares']?.toInt() ?? 0,
+        bookmarked: map['bookmarked']);
   }
 
   String toJson() => json.encode(toMap());
@@ -114,7 +148,7 @@ class Article {
 
   @override
   String toString() {
-    return 'Article(titleId: $titleId, title: $title, author: $author, description: $description, url: $url, urlToImage: $urlToImage, publishedAt: $publishedAt, content: $content, tags: $tags, media: $media, links: $links, likes: $likes, shares: $shares)';
+    return 'Article(titleId: $titleId, title: $title, author: $author, description: $description, url: $url, urlToImage: $urlToImage, publishedAt: $publishedAt, content: $content, tags: $tags, media: $media, links: $links, likes: $likes, shares: $shares, bookmarked: $bookmarked)';
   }
 
   @override
@@ -134,7 +168,8 @@ class Article {
         listEquals(other.media, media) &&
         listEquals(other.links, links) &&
         other.likes == likes &&
-        other.shares == shares;
+        other.shares == shares &&
+        other.bookmarked == bookmarked;
   }
 
   @override
@@ -151,6 +186,7 @@ class Article {
         media.hashCode ^
         links.hashCode ^
         likes.hashCode ^
-        shares.hashCode;
+        shares.hashCode ^
+        bookmarked.hashCode;
   }
 }

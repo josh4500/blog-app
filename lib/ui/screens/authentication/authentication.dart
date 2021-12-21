@@ -56,7 +56,7 @@ class _AuthenticationState extends State<Authentication>
                             topRight: Radius.circular(36.0),
                           ),
                           child: TabBarView(
-                            //physics: const NeverScrollableScrollPhysics(),
+                            physics: const NeverScrollableScrollPhysics(),
                             controller: tabController,
                             children: const [Login(), SignUp()],
                           ),

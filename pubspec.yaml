@@ -19,6 +19,7 @@ dependencies:
   sqflite: ^2.0.1
   supabase: ^0.2.10
   sign_button: ^2.0.2
+  status_view: ^0.0.2
 
 dev_dependencies:
   flutter_test:
@@ -28,3 +29,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/adventure.jpg
+    - assets/images/art.jpg
+    - assets/images/nature.jpg
+    - assets/images/other.jpg
+    - assets/images/poetry.jpg
+    - assets/images/science.jpg
+    - assets/images/space.jpg
+    - assets/images/sport.jpg
+    - assets/images/technology.jpg
+    - assets/images/wildlife.jpg
