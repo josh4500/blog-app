@@ -23,7 +23,7 @@ class _AuthenticationState extends State<Authentication>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0XFFE8ECF4),
+      backgroundColor: const Color(0xffF9FAFF),
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints:

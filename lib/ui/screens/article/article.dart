@@ -10,7 +10,7 @@ class ArticleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xffF9FAFF),
       body: ScrollConfiguration(
         behavior: const ScrollBehavior(),
         child: CustomScrollView(
