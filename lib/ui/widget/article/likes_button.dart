@@ -11,7 +11,7 @@ class LikeButton extends StatelessWidget {
         height: 45,
         width: 100,
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: Colors.blue.shade700,
           borderRadius: const BorderRadius.all(Radius.circular(12)),
           boxShadow: [
             BoxShadow(

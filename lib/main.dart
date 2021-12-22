@@ -2,6 +2,7 @@ import 'package:blog_app/ui/screens/article/article.dart';
 import 'package:blog_app/ui/screens/authentication/authentication.dart';
 
 import 'package:blog_app/ui/screens/home/homepage.dart';
+import 'package:blog_app/ui/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,12 +19,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Authentication(),
+      home: const BlogClub(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-//BlogClub(title: 'Flutter Demo Home Page')
 class BlogClub extends StatefulWidget {
   const BlogClub({Key? key, required this.title}) : super(key: key);
 
