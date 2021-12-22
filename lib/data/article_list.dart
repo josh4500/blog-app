@@ -10,7 +10,7 @@ List<Article> articleList = [
   ),
   Article.test().copyWith(
     title: 'Sponge one',
-    urlToImage: 'assets/images/technology.jpg',
+    urlToImage: 'assets/images/obito.jpg',
     description: 'Ghouls in Tokyo eat eliphants',
     bookmarked: true,
     likes: 72,
