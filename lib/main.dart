@@ -18,11 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BlogClub(title: 'Flutter Demo Home Page'),
+      home: const ArticleScreen(),
     );
   }
 }
 
+//BlogClub(title: 'Flutter Demo Home Page')
 class BlogClub extends StatefulWidget {
   const BlogClub({Key? key, required this.title}) : super(key: key);
 

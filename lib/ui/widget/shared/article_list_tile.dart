@@ -27,7 +27,7 @@ class _ArticleListTileState extends State<ArticleListTile> {
             blurRadius: 5.0,
           ),
           BoxShadow(
-            color: Colors.white,
+            color: Color(0XFFE8ECF4),
             offset: Offset(0.0, -10),
             blurRadius: 5.0,
           ),

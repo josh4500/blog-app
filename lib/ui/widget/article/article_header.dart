@@ -38,7 +38,7 @@ class ArticleHeader extends StatelessWidget {
           const SizedBox(height: 15),
           Text(
             title,
-            style: const TextStyle(fontSize: 25.0, fontWeight: FontWeight.w500),
+            style: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.w500),
           ),
           const SizedBox(height: 15),
           ListTile(
