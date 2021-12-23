@@ -2,6 +2,7 @@ import 'package:blog_app/ui/screens/article/article.dart';
 import 'package:blog_app/ui/screens/authentication/authentication.dart';
 
 import 'package:blog_app/ui/screens/home/homepage.dart';
+import 'package:blog_app/ui/screens/onboarding/onboarding_screen.dart';
 import 'package:blog_app/ui/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
