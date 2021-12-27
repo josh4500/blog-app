@@ -1,3 +1,4 @@
+import 'package:blog_app/ui/screens/article/new_article.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.blue,
         items: const [
