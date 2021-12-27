@@ -1,4 +1,6 @@
+import 'package:blog_app/ui/widget/article/article_action_button.dart';
 import 'package:blog_app/ui/widget/article/article_tags.dart';
+import 'package:blog_app/ui/widget/article/expandable_fab.dart';
 import 'package:flutter/material.dart';
 
 class NewArticleScreen extends StatefulWidget {
@@ -11,6 +13,7 @@ class NewArticleScreen extends StatefulWidget {
 class _NewArticleScreenState extends State<NewArticleScreen> {
   final List<String> _tagList = ['suigetsu', 'jugo', 'karin'];
   late TextEditingController _tagController;
+  bool isExpanded = false;
 
   @override
   void initState() {
@@ -94,70 +97,115 @@ class _NewArticleScreenState extends State<NewArticleScreen> {
                 ],
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: const EdgeInsets.only(bottom: 30),
-                padding: const EdgeInsets.all(8),
-                width: double.maxFinite,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: Colors.blue.shade900,
-                    borderRadius: BorderRadius.circular(24),
-                    boxShadow: const [
-                      BoxShadow(
-                        blurRadius: 5,
-                        offset: Offset(0, 5),
-                      ),
-                    ],),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.close,
-                        size: 30,
-                      ),
-                    ),
-                    const Icon(
-                      Icons.image,
-                      color: Colors.white,
-                    ),
-                    const Icon(
-                      Icons.video_library,
-                      color: Colors.white,
-                    ),
-                    const Icon(
-                      Icons.link,
-                      color: Colors.white,
-                    ),
-                    Row(
-                      children: const [
-                        Text(
-                          'T',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          'T',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 25,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            )
+            // Align(
+            //   alignment:
+            //       isExpanded ? Alignment.bottomCenter : Alignment.bottomLeft,
+            //   child: AnimatedContainer(
+            //     duration: const Duration(),
+            //     margin: const EdgeInsets.only(bottom: 30),
+            //     padding: const EdgeInsets.all(8),
+            //     width: isExpanded ? double.maxFinite : 50,
+            //     height: 50,
+            //     decoration: BoxDecoration(
+            //       color: Colors.blue.shade900,
+            //       borderRadius: BorderRadius.circular(24),
+            //       boxShadow: [
+            //         BoxShadow(
+            //           color: Colors.black.withOpacity(0.3),
+            //           blurRadius: 5,
+            //           offset: const Offset(0, 5),
+            //         ),
+            //       ],
+            //     ),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         GestureDetector(
+            //           onTap: () {
+            //             setState(() {
+            //               isExpanded = !isExpanded;
+            //             });
+            //           },
+            //           child: Container(
+            //             decoration: const BoxDecoration(
+            //               color: Colors.white,
+            //               shape: BoxShape.circle,
+            //             ),
+            //             child: const Icon(
+            //               Icons.close,
+            //               size: 30,
+            //             ),
+            //           ),
+            //         ),
+            //         Visibility(
+            //           visible: isExpanded,
+            //           child: const Icon(
+            //             Icons.image,
+            //             color: Colors.white,
+            //           ),
+            //         ),
+            //         Visibility(
+            //           visible: isExpanded,
+            //           child: const Icon(
+            //             Icons.video_library,
+            //             color: Colors.white,
+            //           ),
+            //         ),
+            //         Visibility(
+            //           visible: isExpanded,
+            //           child: const Icon(
+            //             Icons.link,
+            //             color: Colors.white,
+            //           ),
+            //         ),
+            //         Visibility(
+            //           visible: isExpanded,
+            //           child: Row(
+            //             children: const [
+            //               Text(
+            //                 'T',
+            //                 style: TextStyle(
+            //                     color: Colors.white,
+            //                     fontWeight: FontWeight.w500),
+            //               ),
+            //               Text(
+            //                 'T',
+            //                 style: TextStyle(
+            //                   color: Colors.white,
+            //                   fontWeight: FontWeight.w500,
+            //                   fontSize: 25,
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
+      ),
+      floatingActionButton: ExpandableFab(
+        distance: 200.0,
+        children: [
+          ArticleActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.note),
+          ),
+          ArticleActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.insert_photo),
+          ),
+          ArticleActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.videocam),
+          ),
+          ArticleActionButton(
+            onPressed: () {},
+            icon: const Icon(Icons.insert_link),
+          ),
+        ],
       ),
     );
   }
