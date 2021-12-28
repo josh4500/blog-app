@@ -36,12 +36,12 @@ class _NewArticleScreenState extends State<NewArticleScreen> {
                   const Text(
                     'New Article',
                     style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0),
                   ),
                   const SizedBox(height: 30),
                   const TextField(
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                    decoration: InputDecoration.collapsed(hintText: 'title'),
+                    decoration: InputDecoration.collapsed(hintText: 'Title'),
                   ),
                   const Divider(thickness: 2.0),
                   const SizedBox(height: 10),
@@ -54,7 +54,7 @@ class _NewArticleScreenState extends State<NewArticleScreen> {
                   TextField(
                     controller: _tagController,
                     decoration: InputDecoration(
-                      hintText: 'Tags',
+                      hintText: 'Add Tags',
                       hintStyle: const TextStyle(color: Colors.blue),
                       suffixIcon: GestureDetector(
                         onTap: () {
@@ -62,7 +62,6 @@ class _NewArticleScreenState extends State<NewArticleScreen> {
                             setState(() {
                               _tagList.add(_tagController.text);
                             });
-                            print(_tagList);
                           }
                           _tagController.clear();
                         },
@@ -92,114 +91,26 @@ class _NewArticleScreenState extends State<NewArticleScreen> {
                   const Divider(thickness: 2.0),
                   const TextField(
                     maxLines: null,
-                    decoration: InputDecoration.collapsed(hintText: ''),
+                    decoration: InputDecoration.collapsed(
+                        hintText: 'Type here',
+                        hintStyle: TextStyle(fontStyle: FontStyle.italic)),
                   )
                 ],
               ),
             ),
-            // Align(
-            //   alignment:
-            //       isExpanded ? Alignment.bottomCenter : Alignment.bottomLeft,
-            //   child: AnimatedContainer(
-            //     duration: const Duration(),
-            //     margin: const EdgeInsets.only(bottom: 30),
-            //     padding: const EdgeInsets.all(8),
-            //     width: isExpanded ? double.maxFinite : 50,
-            //     height: 50,
-            //     decoration: BoxDecoration(
-            //       color: Colors.blue.shade900,
-            //       borderRadius: BorderRadius.circular(24),
-            //       boxShadow: [
-            //         BoxShadow(
-            //           color: Colors.black.withOpacity(0.3),
-            //           blurRadius: 5,
-            //           offset: const Offset(0, 5),
-            //         ),
-            //       ],
-            //     ),
-            //     child: Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       children: [
-            //         GestureDetector(
-            //           onTap: () {
-            //             setState(() {
-            //               isExpanded = !isExpanded;
-            //             });
-            //           },
-            //           child: Container(
-            //             decoration: const BoxDecoration(
-            //               color: Colors.white,
-            //               shape: BoxShape.circle,
-            //             ),
-            //             child: const Icon(
-            //               Icons.close,
-            //               size: 30,
-            //             ),
-            //           ),
-            //         ),
-            //         Visibility(
-            //           visible: isExpanded,
-            //           child: const Icon(
-            //             Icons.image,
-            //             color: Colors.white,
-            //           ),
-            //         ),
-            //         Visibility(
-            //           visible: isExpanded,
-            //           child: const Icon(
-            //             Icons.video_library,
-            //             color: Colors.white,
-            //           ),
-            //         ),
-            //         Visibility(
-            //           visible: isExpanded,
-            //           child: const Icon(
-            //             Icons.link,
-            //             color: Colors.white,
-            //           ),
-            //         ),
-            //         Visibility(
-            //           visible: isExpanded,
-            //           child: Row(
-            //             children: const [
-            //               Text(
-            //                 'T',
-            //                 style: TextStyle(
-            //                     color: Colors.white,
-            //                     fontWeight: FontWeight.w500),
-            //               ),
-            //               Text(
-            //                 'T',
-            //                 style: TextStyle(
-            //                   color: Colors.white,
-            //                   fontWeight: FontWeight.w500,
-            //                   fontSize: 25,
-            //                 ),
-            //               ),
-            //             ],
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
       floatingActionButton: ExpandableFab(
-        distance: 200.0,
+        distance: 112.0,
         children: [
-          ArticleActionButton(
-            onPressed: () {},
-            icon: const Icon(Icons.note),
-          ),
           ArticleActionButton(
             onPressed: () {},
             icon: const Icon(Icons.insert_photo),
           ),
           ArticleActionButton(
             onPressed: () {},
-            icon: const Icon(Icons.videocam),
+            icon: const Icon(Icons.add_a_photo),
           ),
           ArticleActionButton(
             onPressed: () {},

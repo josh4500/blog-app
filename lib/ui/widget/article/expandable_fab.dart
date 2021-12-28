@@ -26,7 +26,7 @@ class _ExpandableFabState extends State<ExpandableFab>
   @override
   void initState() {
     super.initState();
-    _open = widget.initialOpen ?? false;
+    _open = widget.initialOpen ?? true;
     _animationController = AnimationController(
       value: _open ? 1.0 : 0.0,
       duration: const Duration(milliseconds: 250),
