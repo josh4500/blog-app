@@ -6,6 +6,8 @@ import 'package:blog_app/ui/screens/onboarding/onboarding_screen.dart';
 import 'package:blog_app/ui/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/screens/article/new_article.dart';
+
 void main() {
   runApp(const MyApp());
 }

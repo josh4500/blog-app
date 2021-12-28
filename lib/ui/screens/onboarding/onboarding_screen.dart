@@ -127,7 +127,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       children: [
                         Row(
                           children: List.generate(4, (index) {
-                            return Container(
+                            return AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
                               margin: const EdgeInsets.only(right: 2.0),
                               height: 6,
                               width: _currentIndex == index ? 20 : 10,
@@ -143,7 +144,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            //print(_pageController.page);
                             _pageController.nextPage(
                               duration: const Duration(milliseconds: 300),
                               curve: Curves.decelerate,

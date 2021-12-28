@@ -20,6 +20,7 @@ dependencies:
   supabase: ^0.2.10
   sign_button: ^2.0.2
   status_view: ^0.0.2
+  flutter_tagging: ^3.0.0
 
 dev_dependencies:
   flutter_test:
